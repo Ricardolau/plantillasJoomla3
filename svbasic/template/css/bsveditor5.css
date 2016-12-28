@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/**
+ * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ */
+/* Link Btn */
+.LinkBtnNegro {
+	background-color: #B2D7BE;
+	float: right;
+	padding: 5px 10px;
+	border-radius: 20px;
+	color: #FFF;
+	text-decoration: none;
+}
+
+
+
+/* Classes de imagenes */
+img.soloarticulo {
+ background-color:red;
+ padding:15px;
+ max-width: 70%;
+}
+img::after{
+	content: " ";
+	border-color:green;
+	border: 3px solid;
+}
+div::before { 
+    content: " <div>";
+    background-color: yellow;
+    color: red;
+    font-weight: bold;
+}
+div::after { 
+    content: " </div>";
+    background-color: yellow;
+    color: red;
+    font-weight: bold;
+}

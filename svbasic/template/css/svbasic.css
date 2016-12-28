@@ -1,0 +1,595 @@
+@charset "UTF-8";
+/*======================================================================
+ * =================   CSS  etiquetas y contenedores generales =========
+ * ===================================================================== */
+/* Color body: #ECECEC  	
+ * Color fondo menu: #F15A25
+ * Fondo rojo: #F15A25
+ * Botton verde claro: b2d7be	
+ * Color texto: bbb8b3
+ * Tamaño fuente:16px
+ * Color texto oscuro: 9e9086
+ * Tamaño fuente: 23px
+ * */
+ 
+/* Fonts */
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
+
+@font-face {
+   font-family: Daydreamer;
+   src: url("../fonts/lemonmilk.eot"); /* EOT file for IE */
+   src: url("../fonts/lemonmilk.ttf") format('truetype'); /* TTF file for CSS3 browsers */
+
+}
+
+@font-face {
+   font-family: simplicity;
+   src: url("../fonts/simplicity.eot");/* EOT f	ile for IE */
+   src: url("../fonts/simplicity.ttf") format('truetype');/* TTF file for CSS3 browsers */	
+
+}
+
+
+@font-face {
+   font-family: OpenSans;
+   src: url("../fonts/OpenSans-Regular.eot"); /* TTF file for CSS3 browsers */
+   src: url("../fonts/OpenSans-Regular.ttf") format('truetype'); /* TTF file for CSS3 browsers */	
+
+}
+
+
+body {
+	max-width: 1728px; /* Indicamos la ventana máxima */
+	margin: 0px auto;
+	padding: 0;
+	font-family: simplicity, OpenSans, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	letter-spacing: 1px;
+	line-height: 1.2em;
+	background-color:#ECECEC;
+}
+
+.glyphicon {
+	padding: 0 7px 0 0;
+}
+
+
+.LetraRoja {
+	color: #F15A25;
+}
+.LetraVerde {
+	color: #b2d7be;
+}
+	
+
+/* ~~ Selectores de elemento/etiqueta ~~ */
+/*pinta la barra horizontal debajo del slider*/
+.separador {
+clear:both;
+width:100%;
+}
+hr {
+	height: 0.5px;
+	background-color: #e4e4e4;
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+
+
+
+ul, ol, dl { 
+	padding: 0;
+	margin: 0px 35px 10px;
+}
+
+ul{
+	list-style-type:circle;
+}
+li{
+/*
+			 line-height :1.3em;
+*/
+}
+
+h1, h2, h3, h4, h5, h6{
+	margin-top: 0;	 
+}
+
+p{
+	padding: 5px;
+	margin-bottom:10px;
+	font-size:100%;
+	line-height: 1.2em;
+	text-align: left;
+}
+h1 {
+	font-weight:bold;
+	font-size:3em;
+}
+
+
+h2 {
+	font-weight:bold;
+	font-size:1.5em;
+
+}
+h3 {
+	margin-bottom: 5px;
+	font-weight: bold;
+	font-size: 1.3em;
+ }
+ 
+h4 {
+	font-size: 1.2em;
+	text-decoration: none;
+	letter-spacing: 0.03em;	
+}
+
+h4.Rojo{
+	color: rgb(236, 173, 188);
+	font-family: Daydreamer;
+	text-align: center;
+	font-size: 26px;
+}
+
+strong{font-weight:bold;}
+
+a {
+color: #F15A25;
+
+}
+a:visited {
+	
+}
+a.normal {
+ color:inherit;
+}
+a:hover {
+    color: black;
+    text-decoration: underline;
+}
+/* Clase y etiquetas generales */ 
+
+.LinkBtnVerde {
+	background-color: #B2D7BE;
+	float: right;
+	padding: 5px 10px;
+	border-radius: 20px;
+	color: #FFF;
+	text-decoration: none;
+}
+
+.container {
+	max-width: 1728px;
+	width:100%;
+
+ }
+ 
+
+
+
+article {
+	width:100%;
+}
+
+/* Clases utilizadas para forzar el cierre (columnas y filas ) de un contenedor*/
+.cleared  {
+	float: none;
+	clear: both;
+	border: none;
+	height: 1px;
+}
+.separador {
+	clear: both;
+	
+}
+
+input{
+	font-family: OpenSans;
+	border-radius: 20px;
+	border: 1px solid;
+	padding: 3px 10px;
+}
+
+.tooltip-inner {
+	max-width: 200px;
+	padding: 8px;
+	background-color: #9E9086;
+	font-size:1.2em;
+}
+
+.tooltip.top > .tooltip-arrow{
+	 border-top: 5px solid #9E9086;
+}
+
+/* =========================================================================== */
+/* =======================  CSS SUBLAYOUT DE JOOMLA ========================== */
+/* =========================================================================== */
+/* Maquetacion tag */
+ul.tags{
+	list-style-type: none;
+	display: inline-table;
+	font-size: 1.3em;
+}
+ul.tags li{
+	float:left;
+	padding:10px;
+}
+
+ul.tags li a {
+
+	padding:10px;
+}
+
+ul.tags li a.label {
+	background-color: black;
+}
+
+
+/* Maquetacion paginacion */
+.pagination {
+	font-family: Ariel;
+}
+.pagination > li > a{
+	background-color: #F15A25;
+	color: white;
+}
+.pagination > .disabled > a{
+	background-color:  #F15A25;
+	color: white;
+}
+.pagination > .active > a{
+	background-color:  black;
+
+}
+
+/* ========================================================================= */
+/*  =========================  CSS DE CABECERA ============================= */
+/* ========================================================================= */
+.Cabecera {
+margin-top: 10px;
+
+}
+
+.moduletable.icono{
+float:left;
+}
+
+/****  Maquetación de Modulo de acceso **/
+
+#form-login-username {
+/*
+	float:left;
+	margin-right: 5px;
+*/
+}
+
+#form-login-password {
+/*
+	float:left;
+	margin-right: 5px;
+*/
+}
+
+
+.Pop-up {
+	display: none;
+    position: absolute;
+    z-index: 1000;
+    border: 1px solid;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px;
+/*
+    right: 0;
+*/
+    background-color: #f7f6f4;
+}
+a.usuarioRegistrado {
+	/* Esto todo lo hago para mostrar Pop-up menu registrado */
+	height: 100px;
+	display: block;
+	position: absolute;
+	width: 100%;
+}
+a.usuarioRegistrado:hover > div {
+	display:block;
+}
+
+
+
+
+/* ========================================================================= */
+/*  ====================  CSS MODULO MENU MAXI   =========================== */
+/* ========================================================================= */
+
+.moduletable.nav {
+	background-color:#F15A25;
+
+}
+
+.maximenu {
+display: table;
+margin: 0px auto;
+}
+li.Nivel1{
+	font-family:simplicity;
+	color: #9e9086;
+	font-size: 1.2em;
+	}
+li.Nivel1:hover{
+/*
+font-weight: bold;
+*/
+box-shadow: -2px -2px 0px #E9E9E9;
+background-color:black;
+}
+a.Nivel1{
+	color: white;
+	}
+a.Nivel1:hover {
+text-decoration:none;
+}
+div.maximenu {
+text-transform: uppercase;
+font-weight: 600;
+
+}
+
+div.maximenu2 {
+background-color: white;
+padding: 2%;
+z-index: 2000;
+width: 100%;
+left: 15px; /* Llevo a la izq, para centrar .. ver que influye padding*/
+
+
+}
+ul.maximenu, ul .descendente1, ul .descendente2 {
+font-family:simplicity;
+letter-spacing: 1px;
+line-height: 1.3em;
+}
+
+
+
+a.Nivel2{
+	color: #9e9086;
+	font-family: simplicity;
+	font-size:1em;
+}
+
+li a.Nivel3 {
+font-size:0.8em;
+color:#bbb8b3;
+}
+
+a.Nivel3{
+	font-family: simplicity;
+	
+}
+/* Menu Vertical - seleccionado */
+.nav-pills > li.active > a{
+	background-color:#F15A25;
+}
+
+.theme-default .nivoSlider{
+box-shadow: none !important	;
+
+}
+
+
+.breadcrumb {
+background-color: transparent;
+}
+.breadcrumb > li + li::before {
+    padding: 0px 5px;
+    color: #CCC;
+    content: "> ";
+}
+
+
+
+
+/* Lo utilizo modulo productos destacados vista grande */
+.ProductImage {
+    max-height: 401px;
+    width: 100%;
+    max-width: 401px;
+}
+
+/* ========================================================================= */
+/* ======================  CSS MODULO MENU 		============================ */
+/* ========================================================================= */
+
+.menu-vertical{
+	display:table;
+	text-align: left;
+}
+
+
+/* ========================================================================= */
+/* ========================  CSS DE Componente Content    ================== */
+/* ========================================================================= */
+
+.Componente{
+	display:table;
+}
+
+.page-header{
+	border:0px;
+}
+.items-leading{
+	margin-bottom: 60px;
+}
+
+.page-header h1 {
+	text-align:center; 
+}
+.page-header h2 {
+	font-family:Daydreamer;
+	text-transform: uppercase;
+	font-size: 3em;
+}
+
+/* Maquetacion pop-up */
+#jcemediabox-popup-page .page-header {
+	margin:0px;
+	
+}
+.items-row {
+	margin-top:30px;
+}
+/* Contenedor columnas en categoria */
+.page-header-row h2 a{
+color:black;
+}
+
+
+
+/* Comunes para Principales y columnas */
+.Content{
+margin-top: 5px;
+}
+.category-desc {
+	margin-bottom: 20px;
+}
+
+/* Descripción de categoria centrada... */
+.category-desc p{
+text-align:center;
+
+}
+
+.Principal{
+	display:table;
+
+	margin-top: 5px;
+}
+
+.blog-item {
+	margin-bottom: 15px;
+}
+
+.page-header-row h1{
+	text-align: center;
+	font-family: Daydreamer;
+	font-size: 2em;
+	padding: 0px;
+	margin-bottom: 10px;
+
+}
+.blog h1 a:link,.blog h1 a:visited{
+	text-decoration: none;
+
+}
+
+.blog-item h2{
+	font-size:130%;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 0px;
+	text-shadow: 1px 1px 0.9px #CBC7C7;
+	color: #000;
+}
+.blog-item h2 a:link {
+	text-decoration: none;
+	color: #808080;
+}
+
+
+.blog-item h2 a:visited {
+	color:black;
+}
+.blog-item-img {
+	text-align: center;
+	margin-top: 5px;
+}
+.blog-item-img img {
+	width: 98%; /* Esto debería ser un parametro de plantilla */
+}
+
+.blog-item-contenido { /* No me gusta mucho hacerlo asi pero es lo más rápido ahora */
+	height: 135px;
+	overflow: hidden;
+}
+.boton-leermas {
+	background-color: #b2d7be;
+	float: right;
+	padding: 5px;
+	border-radius: 5px;
+}
+.boton-leermas a:link{
+	text-decoration:none;
+}
+
+/* Con esta clase , eliminamos efecto bootstrap dentro texto introduciod en columna */
+.columna div{
+	margin-left: 0px;
+	width: 100%;
+}
+
+.columna div img.soloarticulo{
+	/* Ocultamos imagen en vista categoria columna */
+	display: none;
+}
+
+/* Clase para limitar los video a un maximo y centrarlo.. */
+.video {
+    margin: 15px auto ;
+    max-width: 1000px;
+}
+
+.paginado{
+	text-align:center;
+
+}
+/* ========================================================================= */
+/* =======================  CSS DE Componente Content-> Articulo  ========== */
+/* ========================================================================= */
+
+
+/* ========================================================================= */
+/* =======================  CSS DE Componente Contacto			  ========== */
+/* ========================================================================= */
+.contact h2{
+	font-family: Daydreamer;
+    font-size: 32px;
+    text-align: center;
+}
+
+.contacto-buttom {
+    background: #F15A25;
+    border: 0px;
+    border-radius: 20px;
+    margin: 10px 0;
+    color: white;
+	padding: 5px 30px;
+
+}
+
+
+/* ========================================================================= */
+/* =======================  CSS DE Componente Tags				  ========== */
+/* ========================================================================= */
+
+.tag-lista{
+margin: 25px 0px;
+}
+
+/* ========================================================================= */
+/* =======================  CSS DE Posicion PIE				 =============== */
+/* ========================================================================= */
+
+.PieDespues {
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+
