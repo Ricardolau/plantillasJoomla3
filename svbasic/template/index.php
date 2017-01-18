@@ -5,7 +5,7 @@ defined('_JEXEC') or die;
 $app = JFactory::getApplication();
 $templateparams	= $app->getTemplate(true)->params;
 $app             = JFactory::getApplication();
-$doc             =& JFactory::getDocument();
+$doc             = JFactory::getDocument();
 $user            = JFactory::getUser();
 $this->language  = $doc->language;
 $this->direction = $doc->direction;
