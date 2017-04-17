@@ -17,9 +17,7 @@ JHtml::_('behavior.keepalive');
 		<!-- login /default_login -->
 		<div class="page-header corona">
 			<div class="CategoriaVirtuemart">
-				<div class="rayasI"></div>
 				<h1><?php echo $this->escape($this->params->get('page_heading'));?></h1>
-				<div class="rayasD"></div>
 			</div>
 		</div>
 	<?php endif; ?>

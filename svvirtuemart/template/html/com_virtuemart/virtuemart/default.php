@@ -26,14 +26,12 @@ $menu = $app->getMenu();
 $menuItemActivo= $menu->getActive()->params;
 
 ?>
-<!-- Mostramos Titulo de Item de Menu-->
+<!-- Mostramos virtuemart Titulo de Item de Menu-->
 <div class="blog">
 	<?php if ($menuItemActivo->get('show_page_heading',1) ) : ?>
 		<div class="page-header">
 			<div class="CategoriaVirtuemart">
-					<div class="rayasI"></div>
 					<h1><?php echo $menuItemActivo->get('page_heading'); ?></h1>
-					<div class="rayasD"></div>
 			</div>
 		</div>
 	<?php endif; ?>
@@ -57,8 +55,18 @@ if ($this->categories and VmConfig::get('show_categories', 1) ) {
 	}
 # Show template for : topten,Featured, Latest Products if selected in config BE
 if (!empty($this->products) ) {
+	
+	//~ $vmtemplate =VmConfig::loadConfig(); // Asi sabemos que podemos obtener en config
+	$ConfImagen = array (
+				'width' 			=> VmConfig::get('img_width'),
+				'height' 			=> VmConfig::get('img_height'),
+				'ImgPendiente'		=> VmConfig::get('no_image_set'),
+				'ImgNoEncontrada'	=> VmCOnfig::get('no_image_found')
+				);
+	
+	
 	$products_per_row = VmConfig::get ( 'homepage_products_per_row', 3 ) ;
-	echo $this->renderVmSubLayout($this->productsLayout,array('products'=>$this->products,'currency'=>$this->currency,'products_per_row'=>$products_per_row,'showRating'=>$this->showRating)); //$this->loadTemplate('products');
+	echo $this->renderVmSubLayout($this->productsLayout,array('products'=>$this->products,'currency'=>$this->currency,'products_per_row'=>$products_per_row,'showRating'=>$this->showRating,'ConfImagen'=>$ConfImagen)); //$this->loadTemplate('products');
 }
 
 ?> <?php vmTime('vm view Finished task ','Start'); ?>

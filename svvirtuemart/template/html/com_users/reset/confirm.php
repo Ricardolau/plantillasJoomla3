@@ -14,10 +14,8 @@ JHtml::_('behavior.formvalidator');
 ?>
 <div class="reset-confirm<?php echo $this->pageclass_sfx?>">
 	<div class="CategoriaVirtuemart">
-		<div class="rayasI"></div>
 		<!-- reset/confirm -->
 		<h1>Recuperar contraseña</h1>
-		<div class="rayasD"></div>
 	</div>
 
 	

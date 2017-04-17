@@ -75,9 +75,7 @@ if ($NItemsTree >=  0 ) {
 			?>
 			<div class="CategoriaVirtuemart" <?php echo $styleone;?>>
 				<?php echo $IconoCategoria;?>
-				<div class="rayasI"></div>
 				<h1><?php echo $this->category->category_name; ?></h1>
-				<div class="rayasD"></div>
 			</div>
 			<?php
 			if (empty($this->keyword) and !empty($this->category)) {
@@ -221,26 +219,29 @@ if (!empty($this->keyword)) {
 
 	<?php
 	
-	//~ $vmtemplate =VmConfig::loadConfig(); // Asi sabemos que podemos obtener en config
-	$ConfImagen = array (
-				'width' 			=> VmConfig::get('img_width'),
-				'height' 			=> VmConfig::get('img_height'),
-				'ImgPendiente'		=> VmConfig::get('no_image_set'),
-				'ImgNoEncontrada'	=> VmCOnfig::get('no_image_found')
-				);
+	
 	
 
-	if (!empty($this->products)) {
-	$products = array();
-	$products[0] = $this->products;
-	echo shopFunctionsF::renderVmSubLayout($this->productsLayout,array('products'=>$products,'currency'=>$this->currency,'products_per_row'=>$this->perRow,'showRating'=>$this->showRating,'ConfImagen'=>$ConfImagen));
+if (!empty($this->products)) {
+		//~ $vmtemplate =VmConfig::loadConfig(); // Asi sabemos que podemos obtener en config
+		$ConfImagen = array (
+					'width' 			=> VmConfig::get('img_width'),
+					'height' 			=> VmConfig::get('img_height'),
+					'ImgPendiente'		=> VmConfig::get('no_image_set'),
+					'ImgNoEncontrada'	=> VmCOnfig::get('no_image_found')
+					);	
+			
+			
+		$products = array();
+		$products[0] = $this->products;
+		echo shopFunctionsF::renderVmSubLayout($this->productsLayout,array('products'=>$products,'currency'=>$this->currency,'products_per_row'=>$this->perRow,'showRating'=>$this->showRating,'ConfImagen'=>$ConfImagen));
 
-	?>
+		?>
 
-<div class="vm-pagination vm-pagination-bottom">
-	<span class="vm-page-counter"><?php echo $this->vmPagination->getPagesCounter (); ?></span><br>
-	<?php echo $this->vmPagination->getPagesLinks (); ?>
-</div>
+	<div class="vm-pagination vm-pagination-bottom">
+		<span class="vm-page-counter"><?php echo $this->vmPagination->getPagesCounter (); ?></span><br>
+		<?php echo $this->vmPagination->getPagesLinks (); ?>
+	</div>
 
 	<?php
 } elseif (!empty($this->keyword)) {

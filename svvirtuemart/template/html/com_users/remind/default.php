@@ -14,9 +14,7 @@ JHtml::_('behavior.formvalidator');
 ?>
 <div class="remind<?php echo $this->pageclass_sfx?>">
 	<div class="CategoriaVirtuemart">
-		<div class="rayasI"></div>
 		<h1>Recuperar usuario</h1>
-		<div class="rayasD"></div>
 	</div>
 
 	

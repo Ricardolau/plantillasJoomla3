@@ -33,7 +33,7 @@ $iCategory = 1;
 // Separator
 }
 ?>
-<!-- Entro layouts plantilla -->
+<!-- Entro layouts CategoE plantilla -->
 <div class="category-view">
 
 	<div>

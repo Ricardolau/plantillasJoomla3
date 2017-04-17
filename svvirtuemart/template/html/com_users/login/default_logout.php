@@ -16,9 +16,7 @@ defined('_JEXEC') or die;
 	?>
 		<div class="page-header corona">
 			<div class="CategoriaVirtuemart">
-				<div class="rayasI"></div>
 				<h1><?php echo ' Deseas de loguear - Gracias por la visita '?></h1>
-				<div class="rayasD"></div>
 			</div>
 		</div>
 	<?php endif; ?>
