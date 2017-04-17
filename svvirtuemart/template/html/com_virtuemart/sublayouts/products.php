@@ -11,6 +11,7 @@
  */
 
 defined('_JEXEC') or die('Restricted access');
+$ConfImagen = $viewData['ConfImagen'];
 $products_per_row = $viewData['products_per_row'];
 $currency = $viewData['currency'];
 $showRating = $viewData['showRating'];
@@ -76,7 +77,13 @@ foreach ($viewData['products'] as $type => $products ) {
 	//~ echo $UrlImagenthum;
     //~ print_r($Imagenthum);
     //~ echo '</pre>';
+    
+    //~ echo '<pre>';
+    //~ print_r( $ConfImagen);
+    //~ echo '</pre>';
+    
     ?>
+    
 	<div class="producto <?php echo ' col-md-' . $columnas ?>">
 		<div class="contenido-product">
 			<div class="vm-product-media-container">
@@ -101,8 +108,8 @@ foreach ($viewData['products'] as $type => $products ) {
 							$Imagenthum = $product->images[0];
 							$LinkImagenthum=JPATH_CONFIGURATION.'/';// Ruta del servidor
 							$LinkImagenthum= $LinkImagenthum.$Imagenthum->file_url_folder_thumb;
-							// Esto puede ser un problema si cambiamos las medidas en configuracion virtuemart.
-							$sufijo = '_401x401';
+							// Obtenemos la configuracion que tenemos para montar el sufijo.
+							$sufijo = '_'.$ConfImagen['width'].'x'.$ConfImagen['height'];
 							$LinkImagenthum = $LinkImagenthum.$Imagenthum->file_name.$sufijo.'.'.$Imagenthum->file_extension;
 							//~ print_r($LinkImagenthum);
 							if (file_exists($LinkImagenthum)) {

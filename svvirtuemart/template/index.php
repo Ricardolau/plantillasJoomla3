@@ -3,7 +3,7 @@
 defined('_JEXEC') or die;
 
 $app = JFactory::getApplication();
-$templateparams	= $app->getTemplate(true)->params;
+//~ $templateparams	= $app->getTemplate(true)->params;
 $app             = JFactory::getApplication();
 $doc             = JFactory::getDocument();
 $user            = JFactory::getUser();
@@ -49,8 +49,31 @@ unset($this->_scripts[JURI::root(true).'/media/jui/js/bootstrap.min.js']);
 
 // Add Stylesheets
 $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/bootstrap.min.css');
-$doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/svvirtuemart.css');
+// Ahora compilamos less si no existe el fichero css
+// Si queremos volver a compilar solo tenemos que eliminar el fichero ccs
+$ficheroCSS = JPATH_BASE  . '/templates/' . $this->template . '/css/svvirtuemart.css';
 
+// Compilamos CSS si no existe CSS o si opición de parametro Compilar Less es SI
+if (file_exists($ficheroCSS) == false || $params['compilarLess'] == 1) {
+	$less = new JLess;
+	$less->setFormatter(new JLessFormatterJoomla);
+	$templates = array(
+		JPATH_BASE . '/templates/'.$this->template .'/less/svvirtuemart.less' => $ficheroCSS);
+	foreach ($templates as $source => $output)
+	{
+		try
+		{
+			$less->compileFile($source, $output);
+		}
+		catch (Exception $e)
+		{
+			echo $e->getMessage();
+		}
+	}
+}
+$doc->addStyleSheetVersion($this->baseurl . '/templates/' . $this->template . '/css/svvirtuemart.css');
+
+//~ $doc->addStyleSheetVersion($this->baseurl . '/templates/' . $this->template . '/css/template.css');
 
 // Add JavaScript
 $doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/bootstrap.min.js');
@@ -75,7 +98,7 @@ $doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/bootstra
 	<header>
 		<?php if ($this->countModules('position-0')>0 or  $this->countModules('position-01')>0): ?>
 			<div>
-				<div class="col-md-5">
+				<div class="col-xs-7 col-md-5">
 				<jdoc:include type="modules" name="position-0" style="BS" /> 
 				</div>
 				<div class="col-md-5 col-md-offset-2">

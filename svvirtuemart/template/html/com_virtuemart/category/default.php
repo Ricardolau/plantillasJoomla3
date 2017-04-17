@@ -220,10 +220,20 @@ if (!empty($this->keyword)) {
 
 
 	<?php
+	
+	//~ $vmtemplate =VmConfig::loadConfig(); // Asi sabemos que podemos obtener en config
+	$ConfImagen = array (
+				'width' 			=> VmConfig::get('img_width'),
+				'height' 			=> VmConfig::get('img_height'),
+				'ImgPendiente'		=> VmConfig::get('no_image_set'),
+				'ImgNoEncontrada'	=> VmCOnfig::get('no_image_found')
+				);
+	
+
 	if (!empty($this->products)) {
 	$products = array();
 	$products[0] = $this->products;
-	echo shopFunctionsF::renderVmSubLayout($this->productsLayout,array('products'=>$products,'currency'=>$this->currency,'products_per_row'=>$this->perRow,'showRating'=>$this->showRating));
+	echo shopFunctionsF::renderVmSubLayout($this->productsLayout,array('products'=>$products,'currency'=>$this->currency,'products_per_row'=>$this->perRow,'showRating'=>$this->showRating,'ConfImagen'=>$ConfImagen));
 
 	?>
 

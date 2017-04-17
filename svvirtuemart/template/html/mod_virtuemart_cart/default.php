@@ -26,7 +26,7 @@ defined('_JEXEC') or die('Restricted access');
 			 * por ello si queremos realizar cambios tenemos que tener en cuenta update_cart.js
 			 * */?>
 	<div class= "cesta" style="display:inline;">
-	<img src="" title="Mostrar Carro" alt="Carro">
+		<img src="./templates/<?php echo $app->getTemplate();?>/images/carro.png" title="Mostrar Carro" alt="Carro">
 	</div>
 	<div class="total" style="display:inline;margin-top:8px;">
 		<?php // la linea comentada es la cantidad de productos.

@@ -43,9 +43,23 @@
 						?>
 					</span>
 					<?php } ?>
-					<?php echo JHtml::link ($prow->url, $prow->product_name);
-						echo $this->customfieldsModel->CustomsFieldCartDisplay ($prow);
-						echo '<small>'.$prow->product_sku.'</small><br/>';
+					<?php
+						
+						echo JHtml::link ($prow->url, $prow->product_name);
+						foreach($prow->customProductData as $clave=>$field) {
+							// Lo seleccionado [virtuemart_custom_id]=>$clave y [virtuemart_customfield_id]=>$field
+							// Ahora buscamos en campos:
+							foreach($prow->customfields as $custom){
+								if ($custom->virtuemart_custom_id == $clave && $custom->virtuemart_customfield_id == $field){
+								echo '<br/><small><strong>'.$custom->custom_title.':</strong>'.$custom->customfield_value.'</small>';
+								}
+							}
+						}
+						
+						echo $this->customfieldsModel->CustomsFieldCartDisplay ($prow->customProductData);
+						echo '<small>ID:'.$prow->virtuemart_product_id.'</small><br/>';
+						
+						
 					 ?>
 
 				</td>

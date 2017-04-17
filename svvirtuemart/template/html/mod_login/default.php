@@ -19,6 +19,6 @@ JHtml::_('bootstrap.tooltip');
 <div>
 	<a href="<?php echo JRoute::_('index.php?option=com_users&view=registration&Itemid=' . UsersHelperRoute::getRegistrationRoute()); ?>">
 	<?php echo JText::_('MOD_LOGIN_REGISTER'); ?></a>
-	<img src="images/iconos/usuario.png" alt="usuario"/>
+	<span class="glyphicon glyphicon-user"></span>
 	<a style="color:#bbb8b3 ;" href="index.php/mi-cuenta"> Mi cuenta</a>
 </div>

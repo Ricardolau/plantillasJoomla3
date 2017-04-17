@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
 <extension version="3.1" type="template" client="site">
-	<name>VirtuemartResponsive</name>
+	<name>SVVIRTUEMART</name>
 	<creationDate>26/01/16</creationDate>
 	<author>Ricardo CG </author>
 	<authorEmail>info@solucionesvigo.es</authorEmail>
@@ -20,9 +20,11 @@
 		</div>
 		]]></description>
 	<files>
+		<folder>less</folder>
 		<folder>css</folder>
 		<folder>js</folder>
 		<folder>language</folder>
+		<folder>images</folder>
 		<folder>html</folder>
 		<folder>fonts</folder>
 		<filename>index.html</filename>
@@ -54,5 +56,29 @@
 		<language tag="es-ES">es-ES/es-ES.tpl_svvirtuemart.ini</language>
 		<language tag="es-ES">es-ES/es-ES.tpl_svvirtuemart.sys.ini</language> 
 	</languages>
-	
+	<administration>
+		<languages folder="language">
+			<language tag="en-GB">en-GB/en-GB.tpl_svvirtuemart.ini</language>
+			<language tag="en-GB">en-GB/en-GB.tpl_svvirtuemart.sys.ini</language>
+			<language tag="es-ES">es-ES/es-ES.tpl_svvirtuemart.ini</language>
+			<language tag="es-ES">es-ES/es-ES.tpl_svvirtuemart.sys.ini</language> 
+		</languages>
+	</administration>
+	<config>
+		<fields name="params">
+			<fieldset name="advanced">
+					<field name="compilarLess"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="TPL_SVVIRTUEMART_COMPILAR_LESS_LABEL"
+					description="TPL_SVVIRTUEMART_COMPILAR_LESS_DESC"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+					
+			</fieldset>
+		</fields>
+	</config>
 </extension>
