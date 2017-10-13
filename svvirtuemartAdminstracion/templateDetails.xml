@@ -22,8 +22,9 @@
 		<folder>images</folder>
 		<folder>img</folder>
 		<folder>js</folder>
+		<folder>api</folder>
 		<folder>language</folder>
-	<folder>less</folder>
+		<folder>less</folder>
 	</files>
 	<positions>
 		<position>menu</position>
@@ -42,6 +43,8 @@
 	<languages folder="language">
 		<language tag="en-GB">en-GB/en-GB.tpl_svvirtuemartadmin.ini</language>
 		<language tag="en-GB">en-GB/en-GB.tpl_svvirtuemartadmin.sys.ini</language>
+		<language tag="es-ES">en-GB/en-GB.tpl_svvirtuemartadmin.ini</language>
+		<language tag="es-ES">en-GB/en-GB.tpl_svvirtuemartadmin.sys.ini</language>
 	</languages>
 	<config>
 		<fields name="params">
