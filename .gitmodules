@@ -1,0 +1,6 @@
+[submodule "svvirtuemart"]
+	path = svvirtuemart
+	url = https://github.com/Ricardolau/test2.git
+[submodule "svbasic"]
+	path = svbasic
+	url = https://github.com/Ricardolau/test1.git
