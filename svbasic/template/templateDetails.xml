@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.1" encoding="utf-8"?>
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
 <extension version="3.1" type="template" client="site">
 	<name>SolucionesVigoBasicResponsive</name>
@@ -8,7 +8,7 @@
 	<authorUrl>http://solucionesvigo.es</authorUrl>
 	<copyright>Plantilla para Joomla 3 Basic</copyright>
 	<license>GNU General Public License version 2 or later; ver LICENSE.txt</license>
-	<version>1.0</version>
+	<version>1.1</version>
 	<description>TPL_SVBASIC_XML_DESCRIPTION</description>
 	<files>
 		<folder>css</folder>
@@ -16,6 +16,7 @@
 		<folder>language</folder>
 		<folder>html</folder>
 		<folder>fonts</folder>
+		<folder>less</folder>
 		<filename>index.html</filename>
 		<filename>index.php</filename>
 		<filename>templateDetails.xml</filename>
@@ -45,5 +46,30 @@
 		<language tag="es-ES">es-ES/es-ES.tpl_svbasic.ini</language>
 		<language tag="es-ES">es-ES/es-ES.tpl_svbasic.sys.ini</language> 
 	</languages>
+	<administration>
+		<languages folder="language">
+			<language tag="en-GB">en-GB/en-GB.tpl_svbasic.ini</language>
+			<language tag="en-GB">en-GB/en-GB.tpl_svbasic.sys.ini</language>
+			<language tag="es-ES">es-ES/es-ES.tpl_svbasic.ini</language>
+			<language tag="es-ES">es-ES/es-ES.tpl_svbasic.sys.ini</language> 
+		</languages>
+	</administration>
+	<config>
+		<fields name="params">
+			<fieldset name="advanced">
+					<field name="compilarLess"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="TPL_SVBASIC_COMPILAR_LESS_LABEL"
+					description="TPL_SVBASIC_COMPILAR_LESS_DESC"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+					
+			</fieldset>
+		</fields>
+	</config>
 	
 </extension>
