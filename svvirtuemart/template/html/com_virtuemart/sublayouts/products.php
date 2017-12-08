@@ -11,7 +11,12 @@
  */
 
 defined('_JEXEC') or die('Restricted access');
+// Obtenemos la configuracion de archivos multimedia del producto.
 $ConfImagen = $viewData['ConfImagen'];
+if ($ConfImagen['width'] === ''){
+	// Si el valor width en configuracion es vacio, ponemos 0
+	$ConfImagen['width'] = 0;
+}
 $products_per_row = $viewData['products_per_row'];
 $currency = $viewData['currency'];
 $showRating = $viewData['showRating'];
@@ -119,16 +124,16 @@ foreach ($viewData['products'] as $type => $products ) {
 							$alto = $imagenMedidas[1];      //Alto 
 							$classimagen .= ' Medida'.$ancho.'x'.$alto.'"';
 
-								if ($ancho > $alto){
-								// Es mas alta que ancha lo que debemos reducir el alto en proporcion.
-									$Media100 = (100-(($alto*100)/$ancho))/2;
-									$classimagen .=	'style="padding:'.$Media100.'% 0;"';
-								}
-								if ($ancho < $alto){
-									$Media100 = (100-(($ancho*100)/$alto))/2;
-									$classimagen .=	'style="padding:0 '.$Media100.'%;"';
+								//~ if ($ancho > $alto){
+								//~ // Es mas alta que ancha lo que debemos reducir el alto en proporcion.
+									//~ $Media100 = (100-(($alto*100)/$ancho))/2;
+									//~ $classimagen .=	'style="padding:'.$Media100.'% 0;"';
+								//~ }
+								//~ if ($ancho < $alto){
+									//~ $Media100 = (100-(($ancho*100)/$alto))/2;
+									//~ $classimagen .=	'style="padding:0 '.$Media100.'%;"';
 	
-								}
+								//~ }
 							echo $product->images[0]->displayMediaThumb($classimagen, false);
 							} else {
 								// Implica que la imagen esta mal por eso metemos esta imagen.
